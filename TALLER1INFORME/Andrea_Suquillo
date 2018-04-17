@@ -1,0 +1,549 @@
+---
+title: "Deber1 Módulo 3"
+author: "Andrea Suquillo"
+date: "2018-04-17"
+---
+
+
+5+10
+15.3*23.4
+sqrt(16)
+producto1= 15.3 *23.4
+# Usar asignacion en lugar de igual 
+producto2<- 15.3 *23.4
+print(producto1)
+#Logaritmos 
+log10(producto1)
+#El logaritno sin base por defecto es en base e
+log(producto1)
+#Asignacionde base
+log(producto1, base=2)
+#ES UN COMENTARIO PARA VARIAS LINEAS
+'HOLA ES UN COMENTARIO'
+x<-1:5
+x <- 1:5
+
+#funcion seq
+seq(1, 5, 0.5)
+seq(1, 5, 1)
+
+#SCAN sirve para ingresar valores ( dar doble enter para terminar)
+z <- scan()
+
+#REP
+#Repeticion (valor y numero de repeticiones
+rep(1,20)
+rep(1:3,30)
+rep(seq(1,3),30)
+
+#Argumento EACH
+rep (1:4, each=2)
+
+#Argumento TIMES
+rep (1:4, c(2,2,2,2))
+rep (1:4, times = c(2,2,2,2))
+rep (times = c(2,2,2,2),1:4)
+rep (c(2,2,2,2),1:4)
+
+#SUMA
+sum(x)
+
+#producto
+prod(x)
+
+#which.max(x)
+which.max(c(3,14,15,2))
+which.min(c(3,14,15,2))
+
+#which encuentra un valor especifico--posicion desea
+which(c(3,14,15,2)==3)
+
+#round  redondea
+#sort 
+sort(x, decreasing= TRUE) 
+
+5:1
+
+fx <- function(x)
+{
+	y <- x ^ 2
+		y
+}
+
+fx(5)
+
+
+
+fx <- function(x)
+{
+	y <- x ^ 2
+	cat("El cuadrado de x es: ", y,"\n")
+	return (y)
+}
+
+fx(5)
+
+
+#getwd
+#Imprime donde esta trabajando R
+
+x <- c(1,2,3); y <- c("a", "b", "HOLA")
+z1 <- c(TRUE, TRUE, FALSE) 
+x <- 9:29
+x <- c(1+0i, 2+4i)
+#Mezclando objetos
+y <- c(1.7, "h")
+
+#CLASS
+x <- 0:6
+class(x)
+
+#as.numeric
+as.numeric(x)
+
+#as.logical
+as.logical(x)
+
+#as.character(x)
+as.character(x)
+
+#que tipo de objeto estamos trabajando  
+typeof 
+
+#Suma de vectores
+a <- c(1,3,2)
+b <- c(2,8,9)
+a+b
+sum(a,b)
+
+#Producto interno (punto)
+sum(a*b)
+
+#Vectores ortogonales 
+#si el pructo punto es igual a cero son vectores a 90 grados 
+
+#indexacion
+y <- c(1.2, 3.9, 0.4, 0.12)
+y[c(1,3)]
+
+#Extraer elementos
+v <-3:4
+y[v]
+
+#Eliminar elementos
+z <- c(5,12,13)
+z[-1]
+
+z[-1:-2]
+
+#Extrae duplicados
+x <- c(4,2,17,5)
+y <- x[c(1,1,3)]
+y
+
+
+z[1: length(z)-1]
+z[-length(z)]
+
+#Ejemplo
+z <- seq(1,5,0.5)
+z[1: length(z)-1]
+#z[1:(length(z)-1)+]
+length(z)
+z[c(1,3)]
+z[c(T,F,T,F,F,F,F,F,F)]
+#Algo que no existe
+z[c(11)]
+#Conjunto vacio 
+z[c(0)]
+
+#Recicla las posiciones 
+x = c(1,2,3)
+y = c(3,4)
+x+y
+
+#multiplicacion
+x*y
+
+#matrices 
+
+my_vector
+
+
+#Matrices es un vector apilado 
+my_vector <- 1:20
+dim(my_vector)
+
+dim(my_vector) <-c(4,5)
+my_vector
+
+dim(my_vector) <-c(4,20)
+my_vector
+
+#Deja de ser una dimension para convertirse en una matriz 
+class(my_vector)
+
+#
+my_matrix2 <- matrix (1:20, nrow = 4, ncol= 5)
+identical(my_vector, my_matrix2)
+
+my_matrix2
+#fILAS
+my_matrix2 <- matrix (1:20, nrow = 4, ncol= 10)
+#Columnas
+my_matrix2 <- matrix (1:20, nrow = 4, ncol= 10, byrow = TRUE)
+my_matrix <- my_vector 
+my_matrix
+
+#cbind juntar columnas
+#rbind juntar columnas 
+patients <- c("ANDREA","GINA", "CARLOS", "ALBERTO")
+cbind(patients, my_vector)
+
+#Se esta dando nombre a la cabecera
+my_data <- data.frame(patients, my_matrix)
+cnames <- c ("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data) <- cnames
+
+my_data
+#Crear un objeto que se llama my data frame con 4 vectores
+my.data.frame <- data.frame(
+  ID = c("CARLA", "PEDRO", "LAURA"),
+  EDAD = c(10,25,33),
+  INGRESO = c(NA, 34,15),
+  SEXO = c(TRUE, FALSE, TRUE),
+  ETNIA = c("mestizo", "Afroamericano", "Indigena")
+)
+
+my.data.frame 
+
+
+ID = c("CARLA", "PEDRO", "LAURA")
+EDAD = c(10,25,33)
+INGRESO = c(NA, 34,15)
+SEXO = c(TRUE, FALSE, TRUE)
+ETNIA = c("mestizo", "Afroamericano", "Indigena")
+
+a <- list(ID,EDAD,INGRESO,SEXO,ETNIA)
+a
+
+
+l1 <- list(c(1,2), "A", c(1,2,3))
+l1[2]
+l1[[3]][3]
+
+
+my.data.frame[2,3]
+my.data.frame[2,"INGRESO"]
+typeof(my.data.frame$INGRESO)
+class(my.data.frame$INGRESO)
+str(my.data.frame)
+str(my.data.frame$INGRESO)
+my.data.frame$INGRESO[2]
+my.data.frame[1]
+str(my.data.frame[1])
+str(my.data.frame[[1]])
+my.data.frame[1,]
+my.data.frame[,"ETNIA"]
+my.data.frame[5]
+
+
+#-----------------
+
+m1 <- matrix(1, nr=2, nc=2)
+m2 <- matrix(2, nr=2, nc = 2)
+
+m1
+m2
+
+#rbind
+rbind(m1,m2)
+
+#cbind
+cbind(m1,m2)
+
+#Multiplicacion matricial
+ma = rbind(m1,m2) %*% cbind(m1,m2)
+ma
+
+#transpuesta
+t(ma)
+
+#solve saca ela inversa de la matriz  
+solve(ma)
+
+A <- matrix(c(3,5,1,2,3,1,1,4,-1), ncol = 3)
+b <- c(1,2,1)
+solve(A,b)
+
+
+x <- array(1:20 , dim <- c(4,5))
+x
+
+LETTERS[1:10]
+z <- factor(LETTERS[1:3], ordered= TRUE)
+z
+
+x <- factor (c("a", "b": "b", "a"))
+x
+
+sex_char <- c("f", "f", "m")
+sex_factor <- factor(sex_char, levels = c("m", "f"))
+
+table(sex_char)
+table(sex_factor)
+#table es para frecuencias 
+
+
+
+prop.table(sex_factor)
+
+#Valores perdido
+
+x <- c(1,2,NA, 10,3)
+#reconoce un na
+is.na(x)
+#no reconocio un na 
+is.nan(x)
+is.nan(3)
+is.na(3)
+
+
+
+#BUCLES ayuda a repetir una operacion un determinado numero de veces 
+x <- 1:50000
+y <- x^2
+
+z<- 0
+
+for(i in 1:50000) z[i] <- x[i]^2
+
+
+for(i in 1:5)
+{
+  print(i)
+  
+}
+
+
+for (i in c(3,2,9,6))
+{
+  
+  print(i^2)
+  
+}
+
+
+medios.transporte <- c("carro", "camion", "metro", "moto")
+for(vehiculo in medios.transporte)
+{print (vehiculo)}
+
+
+
+#while
+#1
+i <- 1
+while (i<=10) i<- i+4
+i
+
+#2
+i <- 1
+while(TRUE){#loop similar al anterior
+  i <- i+4
+  if(i>10) break
+}
+
+i
+
+
+
+
+contador <-0 
+i <- 1
+while(TRUE){#loop similar al anterior
+  i <- i+4
+  contador <- contador+1
+  print (contador)
+  if(i>10) break
+}
+
+i
+contador
+
+i
+
+#IF ELSE
+x
+y
+
+
+oddcount <- function(x)
+{
+  k <- 0 #se asigna 0 a k
+  for( n in x)
+  {
+    if(n%%2 == 1) k <- k+1
+  }
+  
+  return (k)
+}
+
+k
+x <- seq(1:3)
+oddcount(x)
+
+
+VAN
+
+van <- function(I0,K,V)
+{
+  y <- rep(0,n) 
+  n <- length(V)
+  for (i in 1:n)
+  {
+    y[i+1] <- V[i+1]/(1+K)^i
+  }
+  sum(y) - I0
+}
+
+y
+
+#LAPPLY sobre listas
+set.seed(314)
+x <- list (a = 1:5, b= rnorm(10))#rnorm crea numero aleatorios 
+lapply(x, mean)
+
+#SAPPLY sobre listas
+x <- list (a = 1:4, b = rnorm(10), c= rnorm(20,1), d=rnorm(100,5) )
+lapply(x, mean)#conserva la estructura de lista
+
+x <- list (a = 1:4, b = rnorm(10), c= rnorm(20,1), d=rnorm(100,5) )
+sapply(x, mean)# matricial 
+
+
+#apply sobre matrices
+
+x <- matrix(rnorm(200), 20,10)
+apply (x,2,mean)
+
+
+
+#tapply
+x <- c(rnorm(10), runif(10), rnorm(10,1))
+f <- gl(3,10)
+
+f
+tapply (x, f,mean)
+
+
+#Aggregate By
+
+data("InsectSprays") #bases de datos que vienen con el paquete de R, importa los datos
+#INSECTSPRAYS es un data frame 
+InsectSprays$x <- rnorm(length(InsectSprays$count)) #genera datos
+by (InsectSprays, InsectSprays$spray, summary)#datos, variable cualitativa, funcion
+
+#sumary genera un resumen estadistico
+
+?InsectSprays#? equivale a poner help 
+citation("stats")
+
+#Aggregate genera un subconjunto
+aggregate (InsectSprays[,-2],
+           list(InsectSprays$spray),median)
+
+#by no se puede seguir realizando operaciones
+
+InsectSprays$spray == "A"
+InsectSprays[InsectSprays$spray=="A",]
+
+subset(InsectSprays, InsectSprays$spray=="A")#SUBSET realiza un buen manejo de corchetes
+
+
+
+#EJERCICIOS
+#1. La manera mas simple de crear secuencias de numeros eb x es usando el numerador.
+#Escribe 1:20 y como funciona
+a <- 1:20 
+a
+
+#2.
+b <- pi:10
+b
+
+#3.
+#4.
+#5.
+#6.
+#7.
+my_seq <-1:30
+length(my_seq)
+
+my_seq <- seq(5,10,length = 30)
+length(my_seq)
+
+(3 > 5) & (4 == 4)
+((111 >= 111))
+
+#Funciones Graficas
+demo(graphics)
+
+x <- seq(10,20,1)
+plot(x)
+
+y <- seq(30,40,1)
+plot(x,y)#se esta fijando un par ordenado 
+
+
+str (datos.excel) 
+
+boxplot(datos.excel$PNB_PC)# si una variable es asimetrica no se requiere utilizar el 
+#promedio para utilizar
+boxplot(log(datos.excel$PNB_PC))
+boxplot(log(datos.excel$PNB_PC) ~datos.excel$REGION, col=rainbow(5))
+#Poner etiquetas
+fregion = factor(datos.excel$REGION, labels= c("Africa", "America", "Asia", "Europa", "Oceania"))
+boxplot(log(datos.excel$PNB_PC)~datos.excel$REGION, col=rainbow(5))
+
+#pie
+z.pie <- c(20,40,10,30)
+pie(z.pie)
+
+names(z.pie) <- c("SOLTERO", "CASADO", "VIUDO", "DIVORSIADO")
+pie(z.pie)
+
+
+x <- seq(10,20,1)
+plot(x)
+
+y <- seq(30,40,1)
+plot(x,y)#se esta fijando un par ordenado 
+
+plot(1:50, 51:100, main = "RUsers", sub = "Curso R", xlab = "Ingreso",
+     ylab = "Numero", type = "s", col = "blue")
+
+
+
+plot(1:50, 51:100, main = "RUsers", sub = "Curso R", xlab = "Ingreso",
+     ylab = "Numero", type = "s", col = "pink")
+
+curve(x^3-3*x,-2,2)
+abline(h=0, v=0)
+abline(0,0, col="red")
+abline(0,2, col="yellow")
+
+curve(cos(3*x),0,3, col="blue")
+curve(sen(2*x), 0,3, col="red", add= T)
+
+install.packages("rgl")
+library(rgl)
+
+r <- 1
+a <- runif(1000,0,2*pi)
+u <- runif(1000, -r,r)
+
+x <- cos(a) * sqrt(1 - u^2)
+y <- sin(a) * sqrt(1- u^2)
+z <- u
+
+plot3d(x,y,z,col="blue")
